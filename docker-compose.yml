@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: oms_db
+    environment:
+      POSTGRES_DB: oms
+      POSTGRES_USER: oms_user
+      POSTGRES_PASSWORD: oms_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - oms_data:/var/lib/postgresql/data
+
+volumes:
+  oms_data:
